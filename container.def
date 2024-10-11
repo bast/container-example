@@ -1,0 +1,9 @@
+Bootstrap: docker
+From: python:latest
+
+%files
+    summation.py /opt
+
+%runscript
+    echo "Got arguments: $*"
+    exec python /opt/summation.py "$@"
